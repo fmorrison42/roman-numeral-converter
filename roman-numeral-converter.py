@@ -1,39 +1,24 @@
-"""
-roman numeral converter to engic numerals
-"""
+
 # list all roman numerals and their engic equivalents
 romanEquiv = { "I":1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
-"""
-I = 1
-V = 5
-X = 10
-L = 50
-C = 100
-D = 500
-M = 1000
-"""
-# ask for the roman numeral
-romanInput = str(input("What is your roman number in question?")).upper()
-#romanInput.upper()
-
-# split up the roman numeral into individual strings
-romanSplit = list(romanInput)
 
 
-"""
-for i in romanSplit
-	- convert each list to its own individual string
-	- compare the letter to it's counterpart and list them out
-	- add each number together
-	- output the final number
+def romanConvert():
+	#ask for the roman string
+	romanInput = str(input("What is your roman number in question?")).upper()
 
-print (romanSplit)	
-"""
-engNumeral = 0
-# run each letter against the roman numeral equivalent to add it to the final printout number
-for i in romanSplit:
-	# i.upper()
+	romanSplit = list(romanInput)
+
+	engNumeral = 0
+	# run each letter against the roman numeral equivalent to add it to the final printout number
+	for i in romanSplit:
+		print(i)
+		if i in romanEquiv:
+			engNumeral = engNumeral + romanEquiv[i]
+
 	# check to see which numeral matches
+	"""
+	keeping this to show the change from many lines to just a few using loops
 	if i == "M":
 		engNumeral = engNumeral + 1000
 	elif i == "D":
@@ -48,6 +33,8 @@ for i in romanSplit:
 		engNumeral = engNumeral + 5
 	elif i == "I":
 		engNumeral = engNumeral + 1
+"""
 
+	print(engNumeral)
 
-print(engNumeral)
+romanConvert()	
